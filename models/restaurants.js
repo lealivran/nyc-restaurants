@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const RestaurantsSchema = new mongoose.Schema({
-  // Complete schema...
+  name: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Restaurant', RestaurantsSchema);
