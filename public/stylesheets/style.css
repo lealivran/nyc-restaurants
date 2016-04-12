@@ -12,3 +12,10 @@ a {
 .titleHome{
   color: red;
 }
+.page{
+  padding:5px;
+}
+
+.cuisine, .borough{
+  margin-left: 5px;
+}

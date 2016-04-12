@@ -1,5 +1,34 @@
 extends ../layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  - var n=1
+  
+  div.container-fluid
+    h1.text-center= title
+    
+    //- div=restaurants.length
+    //- div=restaurants.limit
+    //- div=restaurants.page
+    //- div=restaurants.pages
+    
+    div.row
+      div.col-xs-6.col-xs-offset-3
+        each restaurant in restaurants.docs
+          div
+            a(href='view/'+ restaurant.restaurant_id )
+              span=restaurant.name
+            
+    nav
+      ul.pagination
+        li
+          a(href='#', aria-label='Previous')
+            span(aria-hidden='true') &laquo;    
+              
+        while n < restaurants.pages
+          li
+            a(href=n)=n++ 
+
+        li
+          a(href='#', aria-label='Next')
+            span(aria-hidden='true') &raquo;

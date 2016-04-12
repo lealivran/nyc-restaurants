@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  
+  div.container-fluid
+    h1.text-center= title
+    
+    each restau in restaurant
+      div.row
+        div.col-xs-12
+          h3.titre_restau=restau.name
+          
+      div.row
+        div.col-xs-6
+          span.cuisine #{restau.cuisine} #{restau.borough}
+          
+          each address in restau.address
+            div.address #{address.building} - #{address.street}
+          
+          
+          img(src='http://maps.googleapis.com/maps/api/staticmap?center=Australia&size=640x400&style=element:labels|visibility:off&style=element:geometry.stroke|visibility:off&style=feature:landscape|element:geometry|saturation:-100&style=feature:water|saturation:-100|invert_lightness:true&key=AIzaSyCHxvKx4e7DHMVQ1pIReGyFlKOQdvYbMi0')
+          
+          
+          
+          
+        div.col-xs-6
+          h5 Notes
+          each grade in restau.grades
+            div Score #{grade.score} - grade #{grade.grade} (#{grade.date})
+            
+            
