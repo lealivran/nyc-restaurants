@@ -14,6 +14,7 @@ const RestaurantsSchema = new mongoose.Schema({
     building: { type : String, default : '' },
     street: { type : String, default : '' },
     zipcode: { type : String, default : '' },
+    coord: [{ type : Number, default : 0 }],
   }],
   restaurant_id: { type: String, required: true },
 });
