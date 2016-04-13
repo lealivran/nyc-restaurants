@@ -17,7 +17,7 @@ block content
         each restaurant in restaurants.docs
           div
             a(href='view/'+ restaurant.restaurant_id )
-              span=restaurant.name
+              span #{restaurant.name} (#{restaurant.cuisine}) - #{restaurant.borough}
             
     nav
       ul.pagination
