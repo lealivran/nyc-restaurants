@@ -3,12 +3,11 @@ extends layout
 block content
   div.container-fluid  
     div.row
-      div.col-xs-6
+      div.col-xs-6.box
         p.titleHome Top 10 best scores
         
         each restaurant in restaurants
-          div #{restaurant._id} : #{restaurant.average} 
+          div.restau #{restaurant._id.name} (#{restaurant._id.cuisine}) : #{restaurant.average} 
               
-              
-      div.col-xs-6
+      div.col-xs-3.box
         p.titleHome Lasts comments

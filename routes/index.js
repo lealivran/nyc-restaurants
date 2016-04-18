@@ -6,7 +6,7 @@ var Restaurant = require('../models/restaurants');
 router.get('/', function(req, res, next) {
   Restaurant.aggregate([
     { $unwind: "$grades" },
-    { $group : { _id: "$name", average : { $avg: "$grades.score" } } },
+    { $group : { _id: {name : "$name", cuisine:"$cuisine"} , average : { $avg: "$grades.score" } } },
     { $sort : { average : -1} },
     { $limit : 10 }
   ], function (err, restaurants){
@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
       console.log(err);
       return;
     }
-    // console.log(restaurants);
     res.render('index', { title: 'Home' , restaurants : restaurants});
   });
 

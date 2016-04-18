@@ -6,11 +6,15 @@ block content
   
   div.container-fluid
     h1.text-center= title
+
     
-    //- div=restaurants.length
-    //- div=restaurants.limit
-    //- div=restaurants.page
-    //- div=restaurants.pages
+    
+    //- Les liens ne fonctionnent pas car nous avons eu un problème de route que nous n'avons pas réussi à résoudre
+    div.row
+      a(href='borough/Bronx') Bronx 
+      a(href='borough/Brooklyn') Brooklyn 
+      a(href='borough/Manhattan') Manhattan 
+      a(href='borough/Queens') Queens 
     
     div.row
       div.col-xs-6.col-xs-offset-3

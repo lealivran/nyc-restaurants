@@ -10,7 +10,17 @@ a {
   padding: 10px;
 }
 .titleHome{
-  color: red;
+  color: #333;
+  font-size: 1.4em;
+}
+.box{
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  margin: 30px;
+  padding: 20px;
+}
+.restau{
+  color: rgb(83, 83, 83);
 }
 .page{
   padding:5px;
