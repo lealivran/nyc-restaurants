@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Restaurant = require('../models/restaurants');
+var dateFormat = require('dateformat');
+var now = new Date();
 
 /* GET restaurants listing. */
 router.get('/:page', function(req, res, next) {
@@ -14,7 +16,9 @@ router.get('/:page', function(req, res, next) {
 router.get('/view/:id', function(req, res, next) {
   Restaurant.find({restaurant_id:req.params.id}, function (err, restaurant){
     if (err) console.log(err);
-    // console.log('%s', restaurant)
+    var date_auj = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+    console.log('%s', restaurant);
+    console.log('%s', restaurant.restaurant_id);
     res.render('restaurants/view', {title: 'Restaurant', restaurant});
   })
 });
